@@ -3,6 +3,8 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
     fetch-registry: true
+zuul:
+  prefix: /api
 spring:
   cloud:
     gateway:
