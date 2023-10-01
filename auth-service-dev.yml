@@ -6,6 +6,3 @@ eureka:
 spring:
   application:
     name: auth-service
-application:
-  config:
-    auth-service-url: http://localhost:8088/auth
