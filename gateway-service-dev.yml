@@ -3,7 +3,7 @@ eureka:
     register-with-eureka: false
 spring:
   application:
-    name: zuul-service
+    name: gateway-service
   cloud:
     gateway:
       discovery:
@@ -14,7 +14,5 @@ spring:
           uri: http://localhost:8088
           predicates:
             - Path=/auth/**
-    config:
-      discovery:
-        service-id: zuul-service
+
 
