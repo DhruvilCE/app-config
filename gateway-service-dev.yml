@@ -16,5 +16,12 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/auth/**
+      filter:
+        prefix-path:
+          enabled: true
+        strip-prefix:
+          enabled: true
+            -path = /api
+
 
 
