@@ -1,4 +1,3 @@
-
 server :
   port : 9999
 eureka:
@@ -12,8 +11,11 @@ spring:
       discovery:
         locator:
           enabled: true
+          lower-case-service-id: true
+      default-filters:
+        - RewritePath=/api/v1/.*?/(?<remaining>.*), /$\{remaining}
       routes:
         - id: auth-service
-          uri: lb://auth-service
+          uri: lb://auth-service/
           predicates:
-            - Path=/auth/**
+            - Path=/api/v1/auth/**
