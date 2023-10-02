@@ -1,3 +1,4 @@
+
 server :
   port : 9999
 eureka:
@@ -11,16 +12,10 @@ spring:
       discovery:
         locator:
           enabled: true
-          route-id-prefix: /v1/api
       routes:
         - id: auth-service
           uri: lb://auth-service
+          filters:
+            - PrefixPath=/api
           predicates:
             - Path=/auth/**
-      filter:
-        strip-prefix:
-          enabled: true
-            -path = /api
-
-
-
