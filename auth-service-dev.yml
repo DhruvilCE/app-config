@@ -6,3 +6,5 @@ eureka:
 spring:
   application:
     name: auth-service
+server:
+  port: 8088
